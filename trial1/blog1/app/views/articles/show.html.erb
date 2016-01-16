@@ -4,3 +4,4 @@ You're Looking at Your Article Show Page
 Title: <%= @article.title %> <br>
 Content: <%= @article.content %> 
 </p>
+<%= button_to "Delete", @article, method: :delete %>

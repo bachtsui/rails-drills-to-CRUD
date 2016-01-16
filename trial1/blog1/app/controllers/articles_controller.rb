@@ -50,4 +50,12 @@ class ArticlesController < ApplicationController
 		#Now we're inputting the new params we get from the edit view page
 		redirect_to article_path(article)
 	end
+
+	def destroy
+		article_id = params[:id]
+		article = Article.find_by_id(article_id)
+		article.destroy
+		#this is the article you grabbed from the database
+		redirect_to articles_path		
+	end
 end
