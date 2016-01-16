@@ -23,4 +23,13 @@ class ArticlesController < ApplicationController
 		end
 	end
 
+	def show
+		article_id = params[:id]
+		@article = Article.find_by_id(article_id)
+		#All of a sudden this made a lot of sense
+		#You grab the id from the url
+		#You take the id from the url and search through your db for the entry
+		#You take the entry and render it onto the page through the view
+		render :show
+	end
 end
