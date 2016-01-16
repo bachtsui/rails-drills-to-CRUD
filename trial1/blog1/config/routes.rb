@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get "/users/:id/articles", to: "articles#index", as: "articles"
   #All articles a user has created should appear under one user
   get "/users/:id/articles/new", to: "articles#new", as: "new_article" 
+  post "/users/:id/articles", to: "articles#create", as: "create_article"
 end
