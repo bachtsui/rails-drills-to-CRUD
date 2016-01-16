@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   #Routes for users
   get "/users", to: "users#index", as: "users"
+  get "/signup", to: "users#new", as: "new_user"
+  post "/users", to: "users#create", as: "create_user"
 
   #Routes for articles
   get "/users/:id/articles", to: "articles#index", as: "articles"
