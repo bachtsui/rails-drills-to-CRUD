@@ -19,7 +19,9 @@ class ArticlesController < ApplicationController
 		article = Article.new(article_params)
 
 		if article.save
-			redirect_to articles_path
+			redirect_to article_path(article)
+			#This still seems to redirect articles path and not one article
+			#Was using the wrong path earlier, now it works
 		end
 	end
 
