@@ -34,4 +34,10 @@ class ArticlesController < ApplicationController
 		#You take the entry and render it onto the page through the view
 		render :show
 	end
+
+	def edit
+		article_id = params[:id]
+		@article = Article.find_by_id(article_id)
+		render :edit
+	end
 end
