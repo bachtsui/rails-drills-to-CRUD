@@ -40,4 +40,14 @@ class ArticlesController < ApplicationController
 		@article = Article.find_by_id(article_id)
 		render :edit
 	end
+
+	def update
+		article_id = params[:id]
+		article = Article.find_by_id(article_id)
+		article_params = params.require(:article).permit(:title, :content)
+		article.update_attributes(article_params)
+		#Remember we grab the existing article from the DB
+		#Now we're inputting the new params we get from the edit view page
+		redirect_to article_path(article)
+	end
 end
