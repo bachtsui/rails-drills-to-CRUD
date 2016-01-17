@@ -14,10 +14,17 @@ class UsersController < ApplicationController
 		if user.save
 			session[:user_id] = user.id 
 			redirect_to "/"
+			#Might need to change this redirect path later
 		else
 			redirect_to '/signup'
 			#can also do new_users_path
 		end
+	end
+
+	def show
+		user_id = params[:id]
+		@user = User.find_by_id(user_id)
+		render :show
 	end
 
 	private
