@@ -33,6 +33,21 @@ class UsersController < ApplicationController
 		render :edit
 	end
 
+	def update
+		user_id = params[:id]
+		user = User.find_by_id(user_id)
+		user.update_attributes(user_params)
+		redirect_to user_path(user)
+		#Doesn't seem to update password
+	end
+
+	def destroy
+		user_id = params[:id]
+		user = User.find_by_id(user_id)
+		user.destroy
+		redirect_to users_path
+	end
+
 	private
 
 		def user_params
