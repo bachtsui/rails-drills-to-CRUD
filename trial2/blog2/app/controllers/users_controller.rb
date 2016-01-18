@@ -27,6 +27,12 @@ class UsersController < ApplicationController
 		render :show
 	end
 
+	def edit
+		user_id = params[:id]
+		@user = User.find_by_id(user_id)
+		render :edit
+	end
+
 	private
 
 		def user_params

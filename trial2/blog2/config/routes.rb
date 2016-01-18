@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new", as: "new_user"
   post "/users", to: "users#create", as: "create_user"
   get "/users/:id", to: "users#show", as: "show_user"
+  get "/users/:id/edit", to: "users#edit", as: "edit_user"
 
   #Routes for login form, logging in and logging out
   get "/login", to: "sessions#new"
