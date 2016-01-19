@@ -1,0 +1,9 @@
+You're on User Index
+
+<% @users.each do |user| %>
+	<p>
+		Email: <%= user.email %> <br>
+		First Name: <%user.first_name %> <br>
+		Last Name: <%user.last_name%>
+	</p>
+<% end %>

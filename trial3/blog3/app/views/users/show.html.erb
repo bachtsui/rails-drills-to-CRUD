@@ -1,0 +1,8 @@
+Show Page for One User
+
+<p>
+Email: <%= @user.email %> <br>
+First Name: <%= @user.first_name %> <br>
+Last Name: <%= @user.last_name %> <br>
+<%= button_to "Delete", @user, method: :delete %>
+</p>

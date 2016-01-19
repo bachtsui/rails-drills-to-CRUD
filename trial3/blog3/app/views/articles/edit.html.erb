@@ -1,0 +1,7 @@
+You're on your Edit Article Page
+
+<%= form_for @article do |f| %>
+	Title: <%= f.text_field :title %> <br>
+	Content: <%= f.text_area :content %> <br>
+	<%= f.submit "Save Article" %>
+<% end %>
